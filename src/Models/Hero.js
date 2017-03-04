@@ -5,33 +5,33 @@ export default class Hero {
     this.damage = 10
     this.weak = false
   }
-  setName() {
-
+  setName(name) {
+    this.name = name
   }
 
   getName() {
-
+    return this.name
   }
 
-  setHp() {
-
+  setHp(hp) {
+    this.hp = hp
   }
 
   getHp() {
-
+    return this.hp
   }
 
-  setDamage() {
-
+  setDamage(damage) {
+    this.damage = damage
   }
 
   getDamage() {
-
+    return this.damage
   }
-  setWeak() {
-
+  setWeak(weak) {
+    this.weak = weak
   }
   isWeak() {
-
+    return this.weak
   }
 }
