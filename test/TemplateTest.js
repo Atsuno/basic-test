@@ -1,4 +1,4 @@
- /* eslint-disable prefer-arrow-callback */
+/* eslint-disable prefer-arrow-callback */
 
 import { describe, it, beforeEach, afterEach } from 'mocha'
 import { expect } from 'chai'
