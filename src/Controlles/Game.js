@@ -10,6 +10,7 @@ export default class Game {
     const attack = hero.getDamage()
     let myDamage = damage
     myDamage = attack < 0 || attack === Infinity || attack === attack.toString() ? 0 : attack
-    return hero.getHp().map((hp, index) => heroWeak[index] === false ? hp - myDamage : hp - (myDamage * 2)).filter(hp => hp > 0).length
+    return hero.getHp().map((hp, index) => heroWeak[index] === false ? hp - myDamage : hp - (myDamage * 2))
+      .filter(hp => hp > 0).length
   }
 }
