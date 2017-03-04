@@ -45,11 +45,33 @@ describe('Game', function () {
     })
   })
   describe('countHeroWeak()', function () {
-    it('should be ', function () {
-      this.sinon.stub(Hero.prototype, 'isWeak').returns([false, false, true])
+    it('should be status Weak false = 2 ', function () {
+      this.sinon.stub(Hero.prototype, 'isWeak').returns([false, true, true])
 
       return expect(Game.countHeroWeak(new Hero()))
         .to.be.equal(2)
+    })
+    it('should be status Weak false = 2 ', function () {
+      this.sinon.stub(Hero.prototype, 'isWeak').returns([true, true, true])
+
+      return expect(Game.countHeroWeak(new Hero()))
+        .to.be.equal(3)
+    })
+    it('should be status Weak false = 2 ', function () {
+      this.sinon.stub(Hero.prototype, 'isWeak').returns([true, false, false])
+
+      return expect(Game.countHeroWeak(new Hero()))
+        .to.be.equal(1)
+    })
+  })
+  describe('attackAllAndCountAlive()', function () {
+    it('should be ', function () {
+      this.sinon.stub(Hero.prototype, 'getHp').returns([500, 500, 200])
+      this.sinon.stub(Hero.prototype, 'isWeak').returns([false, true, false])
+      this.sinon.stub(Hero.prototype, 'getDamage').returns(300)
+
+      return expect(Game.attackAllAndCountAlive(new Hero()))
+        .to.be.equal(1)
     })
   })
 })
