@@ -65,13 +65,39 @@ describe('Game', function () {
     })
   })
   describe('attackAllAndCountAlive()', function () {
-    it('should be ', function () {
+    it('should be Hero Alive = 1', function () {
       this.sinon.stub(Hero.prototype, 'getHp').returns([500, 500, 200])
       this.sinon.stub(Hero.prototype, 'isWeak').returns([false, true, false])
       this.sinon.stub(Hero.prototype, 'getDamage').returns(300)
 
       return expect(Game.attackAllAndCountAlive(new Hero()))
         .to.be.equal(1)
+    })
+  })
+  describe('attackAllAndCountTotalDamage()', function () {
+    it('should be Total Damage = 1000', function () {
+      this.sinon.stub(Hero.prototype, 'getHp').returns([500, 500, 200])
+      this.sinon.stub(Hero.prototype, 'isWeak').returns([false, true, false])
+      this.sinon.stub(Hero.prototype, 'getDamage').returns(300)
+
+      return expect(Game.attackAllAndCountTotalDamage(new Hero()))
+        .to.be.equal(1000)
+    })
+    it('should be Total Damage = 1200', function () {
+      this.sinon.stub(Hero.prototype, 'getHp').returns([500, 500, 200])
+      this.sinon.stub(Hero.prototype, 'isWeak').returns([true, true, true])
+      this.sinon.stub(Hero.prototype, 'getDamage').returns(300)
+
+      return expect(Game.attackAllAndCountTotalDamage(new Hero()))
+        .to.be.equal(1200)
+    })
+    it('should be Total Damage = 1200', function () {
+      this.sinon.stub(Hero.prototype, 'getHp').returns([500, 500, 200])
+      this.sinon.stub(Hero.prototype, 'isWeak').returns([true, true, true])
+      this.sinon.stub(Hero.prototype, 'getDamage').returns(-1)
+
+      return expect(Game.attackAllAndCountTotalDamage(new Hero()))
+        .to.be.equal(0)
     })
   })
 })
