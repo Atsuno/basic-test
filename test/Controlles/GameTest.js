@@ -91,7 +91,7 @@ describe('Game', function () {
       return expect(Game.attackAllAndCountTotalDamage(new Hero()))
         .to.be.equal(1200)
     })
-    it('should be Total Damage = 1200', function () {
+    it('should be Total Damage 0', function () {
       this.sinon.stub(Hero.prototype, 'getHp').returns([500, 500, 200])
       this.sinon.stub(Hero.prototype, 'isWeak').returns([true, true, true])
       this.sinon.stub(Hero.prototype, 'getDamage').returns(-1)
