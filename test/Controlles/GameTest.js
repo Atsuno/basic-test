@@ -44,4 +44,12 @@ describe('Game', function () {
         .to.be.equal('')
     })
   })
+  describe('countHeroWeak()', function () {
+    it('should be ', function () {
+      this.sinon.stub(Hero.prototype, 'isWeak').returns([false, false, true])
+
+      return expect(Game.countHeroWeak(new Hero()))
+        .to.be.equal(2)
+    })
+  })
 })

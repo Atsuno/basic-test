@@ -1,6 +1,8 @@
 export default class Game {
   static chaneNameToKebabCase(hero) {
-    const newHero = hero.getName().toLowerCase().split(' ')
-    return newHero.filter(item => item.length).join('-')
+    return hero.getName().toLowerCase().split(' ').filter(item => item.length).join('-')
+  }
+  static countHeroWeak(hero) {
+    return hero.isWeak().filter(item => !item).length
   }
 }
