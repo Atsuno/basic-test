@@ -28,9 +28,11 @@ export default class Hero {
   getDamage() {
     return this.damage
   }
+
   setWeak(weak) {
     this.weak = weak
   }
+
   isWeak() {
     return this.weak
   }
